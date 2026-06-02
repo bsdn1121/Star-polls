@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>StarPolls | The Ultimate Actor Matchup</title>
+    <title>CreatorPolls | The Ultimate Creator Matchup</title>
     <style>
         /* Base Cinematic Styles */
         body { font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #09090b; color: #f4f4f5; margin: 0; padding: 0; display: flex; justify-content: center; height: 100vh; overflow: hidden; }
-        .app-container { width: 100%; max-width: 480px; background-color: #18181b; height: 100%; display: flex; flex-direction: column; position: relative; box-shadow: 0 0 30px rgba(234, 179, 8, 0.1); }
+        .app-container { width: 100%; max-width: 480px; background-color: #18181b; height: 100%; display: flex; flex-direction: column; position: relative; box-shadow: 0 0 30px rgba(236, 72, 153, 0.15); }
         
         /* Header */
-        header { background-color: #09090b; padding: 15px 20px; text-align: center; border-bottom: 2px solid #eab308; display: flex; justify-content: space-between; align-items: center; }
-        header h1 { margin: 0; color: #eab308; font-size: 22px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+        header { background-color: #09090b; padding: 15px 20px; text-align: center; border-bottom: 2px solid #ec4899; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { margin: 0; color: #ec4899; font-size: 22px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
         .admin-badge { background-color: #ef4444; color: white; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;}
 
         /* Content Area */
@@ -26,14 +26,14 @@
         .sub-nav { display: flex; gap: 8px; padding: 15px; background-color: #09090b; overflow-x: auto; scrollbar-width: none; }
         .sub-nav::-webkit-scrollbar { display: none; }
         .sub-nav button { flex: 1; min-width: max-content; background-color: #27272a; color: #a1a1aa; border: 1px solid #3f3f46; padding: 8px 14px; border-radius: 8px; font-weight: bold; font-size: 12px; cursor: pointer; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px;}
-        .sub-nav button.active-pill { background-color: #eab308; color: #000; border-color: #eab308; }
+        .sub-nav button.active-pill { background-color: #ec4899; color: #fff; border-color: #ec4899; }
 
         /* UI Components */
         .section-padding { padding: 20px; }
         h2 { font-size: 18px; margin: 0 0 15px 0; color: #fff; text-transform: uppercase; letter-spacing: 1px;}
         .card { background-color: #27272a; border-radius: 12px; padding: 15px; margin-bottom: 15px; border: 1px solid #3f3f46; position: relative; overflow: hidden;}
-        .btn-primary { background-color: #eab308; color: #000; border: none; padding: 14px; border-radius: 8px; font-weight: 900; font-size: 14px; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;}
-        .btn-primary:active { transform: scale(0.98); background-color: #ca8a04; }
+        .btn-primary { background-color: #ec4899; color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: 900; font-size: 14px; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;}
+        .btn-primary:active { transform: scale(0.98); background-color: #be185d; }
         .btn-secondary { background-color: #3f3f46; color: #fff; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 10px; }
         
         /* Input Forms */
@@ -43,14 +43,14 @@
         /* Matchup UI */
         .matchup-container { display: flex; flex-direction: column; gap: 15px; }
         .video-slot { background-color: #18181b; height: 180px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #71717a; font-size: 12px; border: 1px solid #3f3f46; margin-bottom: 10px; background-size: cover; background-position: center;}
-        .actor-name { font-size: 20px; font-weight: 900; margin: 0; color: #fff; }
-        .movie-title { font-size: 12px; color: #eab308; font-weight: bold; margin: 2px 0 10px 0; text-transform: uppercase; }
-        .vs-divider { text-align: center; font-weight: 900; font-size: 20px; color: #eab308; margin: 5px 0; }
+        .creator-name { font-size: 20px; font-weight: 900; margin: 0; color: #fff; }
+        .creator-title { font-size: 12px; color: #ec4899; font-weight: bold; margin: 2px 0 10px 0; text-transform: uppercase; }
+        .vs-divider { text-align: center; font-weight: 900; font-size: 20px; color: #ec4899; margin: 5px 0; }
         
         /* Bottom Navigation */
         .bottom-nav { position: absolute; bottom: 0; width: 100%; background-color: #09090b; border-top: 1px solid #27272a; display: flex; justify-content: space-around; padding: 15px 0; padding-bottom: calc(15px + env(safe-area-inset-bottom)); z-index: 100; }
         .nav-item { background: none; border: none; color: #71717a; font-size: 10px; font-weight: bold; text-transform: uppercase; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 5px; width: 33%; letter-spacing: 1px;}
-        .nav-item.active-nav { color: #eab308; }
+        .nav-item.active-nav { color: #ec4899; }
         .nav-icon { font-size: 22px; }
 
         /* Admin Queue Item */
@@ -63,110 +63,110 @@
     
     <!-- Header -->
     <header>
-        <h1>StarPolls</h1>
-        <div class="admin-badge" id="admin-indicator" style="display: none;">Studio Admin</div>
+        <h1>CreatorPolls</h1>
+        <div class="admin-badge" id="admin-indicator" style="display: none;">Platform Admin</div>
     </header>
 
     <div class="content-area">
 
         <!-- ==========================================
-             1. THE BOX OFFICE
+             1. THE CREATOR MATCHUP (SFW PUBLIC VOTING)
         =========================================== -->
-        <div id="boxoffice" class="main-view active-main">
+        <div id="matchups" class="main-view active-main">
             
             <div class="sub-nav">
-                <button class="boxoffice-tab active-pill" onclick="navSub('boxoffice', 'matchup')">Daily Matchup</button>
-                <button class="boxoffice-tab" onclick="navSub('boxoffice', 'hof')">Hall of Fame</button>
-                <button class="boxoffice-tab" onclick="navSub('boxoffice', 'create')">Create Poll</button>
+                <button class="matchups-tab active-pill" onclick="navSub('matchups', 'daily')">Daily Matchup</button>
+                <button class="matchups-tab" onclick="navSub('matchups', 'hof')">Hall of Fame</button>
+                <button class="matchups-tab" onclick="navSub('matchups', 'create')">Nominate</button>
             </div>
 
             <!-- Sub: Daily Matchup -->
-            <div id="boxoffice-matchup" class="sub-view active-sub section-padding">
+            <div id="matchups-daily" class="sub-view active-sub section-padding">
                 <div style="text-align: center; margin-bottom: 20px;">
-                    <span style="background-color: #3f3f46; color: #eab308; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Today's Theme: Best Web-Slinger</span>
+                    <span style="background-color: #3f3f46; color: #ec4899; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Today's Theme: Best Glamour Shoot</span>
                 </div>
                 
                 <div class="matchup-container">
-                    <!-- Actor A -->
-                    <div class="card" style="border-color: #eab308;">
-                        <div class="video-slot" style="background-image: url('https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=800&auto=format&fit=crop');">▶ Play Scene Clip</div>
-                        <h3 class="actor-name">Tom Holland</h3>
-                        <p class="movie-title">Spider-Man: No Way Home</p>
-                        <p style="font-size: 13px; color: #a1a1aa; margin-top: 0;">The emotional final swing sequence over the snowy New York skyline.</p>
-                        <button class="btn-primary" onclick="alert('Vote cast for Tom Holland! Added to your Critic Profile.')">Vote Holland</button>
+                    <!-- Creator A -->
+                    <div class="card" style="border-color: #ec4899;">
+                        <div class="video-slot" style="background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=800&auto=format&fit=crop');">▶ Play Teaser Clip</div>
+                        <h3 class="creator-name">Lexi V.</h3>
+                        <p class="creator-title">Top 0.1% Fan Platform Creator</p>
+                        <p style="font-size: 13px; color: #a1a1aa; margin-top: 0;">The viral poolside editorial shoot that broke subscriber records this month.</p>
+                        <button class="btn-primary" onclick="alert('Vote locked in! Added to your Fan Profile.')">Vote Lexi</button>
                     </div>
                     
                     <div class="vs-divider">VS</div>
                     
-                    <!-- Actor B -->
+                    <!-- Creator B -->
                     <div class="card">
-                        <div class="video-slot" style="background-image: url('https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=800&auto=format&fit=crop');">▶ Play Scene Clip</div>
-                        <h3 class="actor-name">Andrew Garfield</h3>
-                        <p class="movie-title">The Amazing Spider-Man 2</p>
-                        <p style="font-size: 13px; color: #a1a1aa; margin-top: 0;">The iconic clocktower rescue attempt with Gwen Stacy.</p>
-                        <button class="btn-primary" style="background-color: #3f3f46; color: white;" onclick="alert('Vote cast for Andrew Garfield! Added to your Critic Profile.')">Vote Garfield</button>
+                        <div class="video-slot" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop');">▶ Play Teaser Clip</div>
+                        <h3 class="creator-name">Mia Styles</h3>
+                        <p class="creator-title">2026 AVN Nominee</p>
+                        <p style="font-size: 13px; color: #a1a1aa; margin-top: 0;">The exclusive high-fashion lingerie campaign from her latest studio release.</p>
+                        <button class="btn-primary" style="background-color: #3f3f46; color: white;" onclick="alert('Vote locked in! Added to your Fan Profile.')">Vote Mia</button>
                     </div>
                 </div>
             </div>
 
             <!-- Sub: Hall of Fame -->
-            <div id="boxoffice-hof" class="sub-view section-padding">
-                <h2>Model of the Year</h2>
-                <div class="card" style="background: linear-gradient(135deg, #27272a 0%, #422006 100%); border-color: #eab308;">
-                    <div style="font-size: 40px; margin-bottom: 10px;">🏆</div>
-                    <h3 style="margin: 0; color: #eab308; font-size: 24px;">Zendaya</h3>
-                    <p style="margin: 5px 0 15px 0; color: #d4d4d8; font-size: 14px;">2025 Undisputed Champion</p>
+            <div id="matchups-hof" class="sub-view section-padding">
+                <h2>Creator of the Year</h2>
+                <div class="card" style="background: linear-gradient(135deg, #27272a 0%, #4c1d95 100%); border-color: #ec4899;">
+                    <div style="font-size: 40px; margin-bottom: 10px;">👑</div>
+                    <h3 style="margin: 0; color: #ec4899; font-size: 24px;">Valentina</h3>
+                    <p style="margin: 5px 0 15px 0; color: #d4d4d8; font-size: 14px;">Undisputed Fan Favorite</p>
                     <div style="display: flex; gap: 10px; font-size: 12px; color: #a1a1aa;">
-                        <span><strong>Wins:</strong> 14</span>
-                        <span><strong>Total Votes:</strong> 1.2M</span>
+                        <span><strong>Matchup Wins:</strong> 24</span>
+                        <span><strong>Total Votes:</strong> 3.1M</span>
                     </div>
                 </div>
             </div>
 
             <!-- Sub: Create a Poll -->
-            <div id="boxoffice-create" class="sub-view section-padding">
+            <div id="matchups-create" class="sub-view section-padding">
                 <h2>Nominate a Matchup</h2>
-                <p style="font-size: 13px; color: #a1a1aa; margin-top: 0;">Submit two actors and specific scenes to be featured on the main stage.</p>
+                <p style="font-size: 13px; color: #a1a1aa; margin-top: 0;">Submit two creators and their SFW teaser links to be featured on the main stage.</p>
                 
                 <div class="card">
-                    <label style="font-size: 12px; color: #eab308; font-weight: bold; text-transform: uppercase;">Matchup Theme</label>
-                    <input type="text" placeholder="e.g., Best Anime Protagonist Entrance">
+                    <label style="font-size: 12px; color: #ec4899; font-weight: bold; text-transform: uppercase;">Matchup Theme</label>
+                    <input type="text" placeholder="e.g., Best Studio Teaser Trailer">
                     
                     <div style="border-top: 1px solid #3f3f46; margin: 15px 0; padding-top: 15px;">
                         <label style="font-size: 12px; font-weight: bold; text-transform: uppercase; color: #a1a1aa;">Contender 1</label>
-                        <input type="text" placeholder="Actor / Model Name" style="margin-top: 5px;">
-                        <input type="text" placeholder="YouTube Video URL">
+                        <input type="text" placeholder="Creator Name" style="margin-top: 5px;">
+                        <input type="text" placeholder="SFW Promo Video URL">
                     </div>
 
                     <div style="border-top: 1px solid #3f3f46; margin: 15px 0; padding-top: 15px;">
                         <label style="font-size: 12px; font-weight: bold; text-transform: uppercase; color: #a1a1aa;">Contender 2</label>
-                        <input type="text" placeholder="Actor / Model Name" style="margin-top: 5px;">
-                        <input type="text" placeholder="YouTube Video URL">
+                        <input type="text" placeholder="Creator Name" style="margin-top: 5px;">
+                        <input type="text" placeholder="SFW Promo Video URL">
                     </div>
 
-                    <button class="btn-primary" onclick="alert('Matchup nominated! The Studio Admins will review it shortly.')">Submit to Studio</button>
+                    <button class="btn-primary" onclick="alert('Matchup nominated! Admins will review the SFW compliance shortly.')">Submit to Studio</button>
                 </div>
             </div>
         </div>
 
         <!-- ==========================================
-             2. THE CRITIC's PROFILE
+             2. THE FAN'S PROFILE
         =========================================== -->
         <div id="profile" class="main-view">
             
             <div class="sub-nav">
-                <button class="profile-tab active-pill" onclick="navSub('profile', 'stats')">Voting Stats</button>
-                <button class="profile-tab" onclick="navSub('profile', 'watchlist')">Watchlist</button>
+                <button class="profile-tab active-pill" onclick="navSub('profile', 'stats')">Fan Stats</button>
+                <button class="profile-tab" onclick="navSub('profile', 'watchlist')">Saved Teasers</button>
                 <button class="profile-tab" onclick="navSub('profile', 'badges')">Badges</button>
             </div>
 
             <!-- Sub: Voting Stats -->
             <div id="profile-stats" class="sub-view active-sub section-padding">
                 <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div style="width: 60px; height: 60px; background-color: #3f3f46; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; border: 2px solid #eab308;">🍿</div>
+                    <div style="width: 60px; height: 60px; background-color: #3f3f46; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; border: 2px solid #ec4899;">💎</div>
                     <div>
-                        <h2 style="margin: 0;">@FilmBuff99</h2>
-                        <span style="font-size: 12px; color: #eab308; font-weight: bold;">Level 4 Critic</span>
+                        <h2 style="margin: 0;">@CreatorFan99</h2>
+                        <span style="font-size: 12px; color: #ec4899; font-weight: bold;">Level 4 Supporter</span>
                     </div>
                 </div>
 
@@ -177,38 +177,38 @@
                     </div>
                     <div class="card" style="flex: 1; text-align: center; margin: 0; padding: 20px 10px;">
                         <div style="font-size: 11px; color: #a1a1aa; font-weight: bold; text-transform: uppercase;">Prediction Accuracy</div>
-                        <div style="font-size: 32px; font-weight: 900; color: #eab308; margin-top: 5px;">78%</div>
+                        <div style="font-size: 32px; font-weight: 900; color: #ec4899; margin-top: 5px;">78%</div>
                     </div>
                 </div>
             </div>
 
             <!-- Sub: Watchlist -->
             <div id="profile-watchlist" class="sub-view section-padding">
-                <h2>Saved Scenes</h2>
+                <h2>Saved Teasers</h2>
                 <div class="card">
-                    <h4 style="margin: 0 0 5px 0;">The Portals Sequence</h4>
-                    <p style="font-size: 12px; color: #a1a1aa; margin: 0 0 10px 0;">Avengers: Endgame • Saved 2 days ago</p>
-                    <button class="btn-secondary">Watch Scene Again</button>
+                    <h4 style="margin: 0 0 5px 0;">Miami Swim Week Editorial</h4>
+                    <p style="font-size: 12px; color: #a1a1aa; margin: 0 0 10px 0;">Creator: Stella R. • Saved 2 days ago</p>
+                    <button class="btn-secondary">Watch Teaser Again</button>
                 </div>
                 <div class="card">
-                    <h4 style="margin: 0 0 5px 0;">Domain Expansion Activation</h4>
-                    <p style="font-size: 12px; color: #a1a1aa; margin: 0 0 10px 0;">Jujutsu Kaisen • Saved 1 week ago</p>
-                    <button class="btn-secondary">Watch Scene Again</button>
+                    <h4 style="margin: 0 0 5px 0;">Exclusive Lingerie Drop</h4>
+                    <p style="font-size: 12px; color: #a1a1aa; margin: 0 0 10px 0;">Creator: Jade M. • Saved 1 week ago</p>
+                    <button class="btn-secondary">Watch Teaser Again</button>
                 </div>
             </div>
 
             <!-- Sub: Badges -->
             <div id="profile-badges" class="sub-view section-padding">
-                <h2>Earned Critic Badges</h2>
+                <h2>Earned Fan Badges</h2>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                     <div class="card" style="text-align: center; padding: 20px 10px;">
                         <div style="font-size: 30px; margin-bottom: 10px;">🎯</div>
-                        <div style="font-size: 12px; font-weight: bold;">Sharpshooter</div>
+                        <div style="font-size: 12px; font-weight: bold;">Tastemaker</div>
                         <div style="font-size: 10px; color: #a1a1aa; margin-top: 5px;">Picked 5 winners in a row</div>
                     </div>
                     <div class="card" style="text-align: center; padding: 20px 10px;">
-                        <div style="font-size: 30px; margin-bottom: 10px;">🎬</div>
-                        <div style="font-size: 12px; font-weight: bold;">Director's Chair</div>
+                        <div style="font-size: 30px; margin-bottom: 10px;">📸</div>
+                        <div style="font-size: 12px; font-weight: bold;">Scout</div>
                         <div style="font-size: 10px; color: #a1a1aa; margin-top: 5px;">Successfully nominated a poll</div>
                     </div>
                 </div>
@@ -228,12 +228,12 @@
             <!-- Sub: Content Queue -->
             <div id="studio-queue" class="sub-view active-sub section-padding">
                 <h2>Pending Nominations</h2>
-                <p style="font-size: 12px; color: #a1a1aa;">Review user submissions before they go live on the Box Office.</p>
+                <p style="font-size: 12px; color: #a1a1aa;">Review user submissions to ensure SFW compliance before they go live.</p>
                 
                 <div class="card queue-item">
-                    <span style="background: #3f3f46; font-size: 10px; padding: 3px 6px; border-radius: 4px; color: #fff;">Submitted by @FilmBuff99</span>
-                    <h4 style="margin: 10px 0 5px 0;">Theme: Best Villain Monologue</h4>
-                    <p style="font-size: 13px; color: #d4d4d8; margin: 0 0 15px 0;">Contender 1: Heath Ledger (The Dark Knight)<br>Contender 2: Josh Brolin (Avengers: Infinity War)</p>
+                    <span style="background: #3f3f46; font-size: 10px; padding: 3px 6px; border-radius: 4px; color: #fff;">Submitted by @CreatorFan99</span>
+                    <h4 style="margin: 10px 0 5px 0;">Theme: Best Magazine Cover</h4>
+                    <p style="font-size: 13px; color: #d4d4d8; margin: 0 0 15px 0;">Contender 1: Kenzie (Maxim Issue)<br>Contender 2: Riley (Playboy SFW Cover)</p>
                     
                     <div style="display: flex; gap: 10px;">
                         <button class="btn-primary" style="background-color: #22c55e; color: white;">Approve</button>
@@ -248,9 +248,9 @@
                 <div class="card">
                     <label style="font-size: 12px; color: #a1a1aa; font-weight: bold;">Active Sponsorship Slot</label>
                     <select style="margin-top: 5px;">
-                        <option>Fandango Ticket Integration</option>
-                        <option>AMC Stubs Membership Ad</option>
-                        <option>Max Streaming Subscription Link</option>
+                        <option>Premium Fan Platform Referral Link</option>
+                        <option>Lingerie Brand Affiliate Integration</option>
+                        <option>Studio Membership Discount Code</option>
                     </select>
                     
                     <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #3f3f46; padding-top: 15px; margin-top: 10px;">
@@ -266,17 +266,17 @@
 
     <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
-        <button id="nav-boxoffice" class="nav-item active-nav" onclick="navMain('boxoffice')">
-            <span class="nav-icon">🎟️</span>
-            <span>Box Office</span>
+        <button id="nav-matchups" class="nav-item active-nav" onclick="navMain('matchups')">
+            <span class="nav-icon">🔥</span>
+            <span>Matchups</span>
         </button>
         <button id="nav-profile" class="nav-item" onclick="navMain('profile')">
             <span class="nav-icon">👤</span>
-            <span>Critic</span>
+            <span>Fan Profile</span>
         </button>
         <button id="nav-studio" class="nav-item" onclick="navMain('studio')">
             <span class="nav-icon">⚙️</span>
-            <span>Studio</span>
+            <span>Admin</span>
         </button>
     </nav>
 </div>
